@@ -1,0 +1,247 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff758f, #ff69b4);;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #ff758f, #ff69b4);
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Gallery Section */
+.gallery-container {
+    margin: 40px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel Container */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    height: 350px;
+    background: (to right, #ff758f, #ff69b4);
+  }
+  
+
+/* Carousel Content */
+.carousel-container {
+    background: linear-gradient(to right, #ff758f, #ff69b4);
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-content {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* Individual Slides */
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* General Button Styles */
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+/* Read My Letter Button */
+.read-letter {
+    background: #fff;
+    color: #ff69b4;
+    box-shadow: 0px 4px 10px rgba(255, 117, 143, 0.5);
+    border: none;
+}
+
+.read-letter:hover {
+    background: #ffafbd;
+    box-shadow: 0px 6px 15px rgba(255, 117, 143, 0.8);
+}
+
+/* Back Button */
+.back-button {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    color: white;
+    box-shadow: 0px 4px 10px rgba(255, 165, 173, 0.5);
+    border: none;
+}
+
+.back-button:hover {
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 165, 173, 0.8);
+}
+
+/* Centering Buttons */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-top: 15px;
+    }
+}
+
+/* Images & Videos */
+.carousel-slide img, 
+.carousel-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.carousel-slide img:hover, 
+.carousel-slide video:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 117, 143, 0.7);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 10px rgba(255, 117, 143, 0.5);
+}
+
+.prev:hover, .next:hover {
+    background: rgba(255, 117, 143, 1);
+    transform: scale(1.1);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    background: linear-gradient(to right, #ff758f, #ff69b4);
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+    .gallery-container {
+      width: 80%;
+    }
+    .carousel {
+      max-width: 400px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .gallery-container {
+      width: 90%;
+    }
+    .carousel {
+      max-width: 300px;
+      height: 250px;
+    }
+    .prev, .next {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel {
+      height: 280px;
+    }
+    .prev, .next {
+      font-size: 18px;
+      padding: 10px 14px;
+    }
+    footer {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .gallery-container {
+      width: 95%;
+    }
+    .carousel {
+      max-width: 250px;
+      height: 200px;
+    }
+    .prev, .next {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+    footer {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .carousel {
+      max-width: 200px;
+      height: 150px;
+    }
+    .prev, .next {
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+    footer {
+      font-size: 12px;
+    }
+  }

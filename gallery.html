@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories ❤</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="years.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <!-- Header Section -->
+    <header>
+        <h1>Our Precious Moments 💕</h1>
+        <p>A collection of our happiest memories together</p>
+        <div class="button-container">
+            <button id="play-button" class="button">Play Music</button>
+            <a href="letter.html" class="button read-letter">Read My Letter to You❤</a>
+        </div>
+    </header>
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-content">
+                <!-- Carousel Slides -->
+                <div class="carousel-slide">
+                    <img src="image (1).jpg" alt="Our Memory 1">
+                </div>
+                <div class="carousel-slide">
+                    <video autoplay muted loop>
+                        <source src="VID-20250214-WA0001.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-slide">
+                    <img src="image (2).jpg" alt="Our Memory 1">
+                </div>
+                <div class="carousel-slide">
+                    <video autoplay muted loop>
+                        <source src="VID-20250214-WA0002.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-slide">
+                    <img src="image (3).jpg" alt="Our Memory 1">
+                </div>
+                <div class="carousel-slide">
+                    <video autoplay muted loop>
+                        <source src="VID-20250214-WA0003.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-slide">
+                    <img src="image (4).jpg" alt="Our Memory 1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="button-container">
+            <a href="index.html" class="button back-button">Back</a>
+        </div>
+    </footer>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let audio = document.getElementById('bg-music');
+            let playButton = document.getElementById('play-button');
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.carousel-slide');
+            const carouselContent = document.querySelector('.carousel-content');
+
+            function showSlide(index) {
+                if (index >= slides.length) {
+                    slideIndex = 0;
+                } else if (index < 0) {
+                    slideIndex = slides.length - 1;
+                } else {
+                    slideIndex = index;
+                }
+                carouselContent.style.transform = `translateX(${-slideIndex * 100}%)`;
+            }
+
+            function nextSlide() {
+                showSlide(slideIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(slideIndex - 1);
+            }
+
+            // Auto Slide every 5 seconds
+            setInterval(nextSlide, 3000);
+
+            // Swipe Support for Mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carouselContent.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carouselContent.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) {
+                    nextSlide();
+                } else if (touchStartX - touchEndX < -50) {
+                    prevSlide();
+                }
+            });
+
+            // Play Music on Button Click
+            playButton.addEventListener('click', () => {
+                audio.play();
+            });
+
+            // Play Music on First Click Anywhere (Fix for autoplay restrictions)
+            document.body.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play().catch(error => console.log('Autoplay blocked:', error));
+                }
+            });
+
+            showSlide(slideIndex);
+        });
+
+    </script>
+</body>
+
+</html>
